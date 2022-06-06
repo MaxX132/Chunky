@@ -16,8 +16,8 @@ def generate_socket_and_listen():
 
     sock_object.setsockopt(socket.SOL_SOCKET ,socket.SO_REUSEADDR ,1)
 
-    ##bind ip to port
-    sock_object.bind(("213.181.157.141" ,54320))
+    ##bind local ip to port
+    sock_object.bind(("127.0.0.1" ,54320))
 
     ##listen for incoming connections
     sock_object.listen(5)
